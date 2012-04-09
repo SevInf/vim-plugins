@@ -4,9 +4,6 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/corntrace/bufexplorer
-[submodule "bundle/buftabs"]
-	path = bundle/buftabs
-	url = https://github.com/vim-scripts/buftabs
 [submodule "bundle/cocoa.vim"]
 	path = bundle/cocoa.vim
 	url = https://github.com/vim-scripts/cocoa.vim.git
@@ -31,3 +28,6 @@
 [submodule "bundle/wombat256.vim"]
 	path = bundle/wombat256.vim
 	url = https://github.com/vim-scripts/wombat256.vim
+[submodule "bundle/vim-easytags"]
+	path = bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags
