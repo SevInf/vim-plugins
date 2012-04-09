@@ -1,0 +1,33 @@
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = https://github.com/corntrace/bufexplorer
+[submodule "bundle/buftabs"]
+	path = bundle/buftabs
+	url = https://github.com/vim-scripts/buftabs
+[submodule "bundle/cocoa.vim"]
+	path = bundle/cocoa.vim
+	url = https://github.com/vim-scripts/cocoa.vim.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "bundle/pythoncomplete"]
+	path = bundle/pythoncomplete
+	url = https://github.com/vim-scripts/pythoncomplete
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby
+[submodule "bundle/vim-smartinput"]
+	path = bundle/vim-smartinput
+	url = https://github.com/kana/vim-smartinput.git
+[submodule "bundle/wombat256.vim"]
+	path = bundle/wombat256.vim
+	url = https://github.com/vim-scripts/wombat256.vim
