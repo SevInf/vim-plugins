@@ -31,3 +31,12 @@
 [submodule "bundle/vim-easytags"]
 	path = bundle/vim-easytags
 	url = https://github.com/xolox/vim-easytags
+[submodule "bundle/zencoding-zim"]
+	path = bundle/zencoding-zim
+	url = https://github.com/mattn/zencoding-vim
+[submodule "bundle/mxml.vim"]
+	path = bundle/mxml.vim
+	url = https://github.com/cespare/mxml.vim
+[submodule "bundle/actionscript.vim"]
+	path = bundle/actionscript.vim
+	url = https://github.com/vim-scripts/actionscript.vim--Leider.git

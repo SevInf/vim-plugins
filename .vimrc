@@ -31,6 +31,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " CocoaPods
 au BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
 
+" MXML and ActionScript
+au BufNewFile,BufRead *.mxml set ft=mxml
+au BufNewFile,BufRead *.as set ft=actionscript
+
 " Key maps
 map <C-L> <esc>:NERDTreeToggle<cr>
 
