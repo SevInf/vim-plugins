@@ -35,6 +35,12 @@ au BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
 au BufNewFile,BufRead *.mxml set ft=mxml
 au BufNewFile,BufRead *.as set ft=actionscript
 
+" Jake
+au BufNewFile,BufRead Jakefile set ft=javascript
+
+" JsTestDirver config
+au BufNewFile,BufRead jsTestDriver.conf set ft=yaml
+
 " Key maps
 map <C-L> <esc>:NERDTreeToggle<cr>
 
