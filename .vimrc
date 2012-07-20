@@ -19,7 +19,12 @@ set smartindent
 set columns=151
 
 set t_Co=256
-colorscheme wombat256mod
+if &t_Co==256 || has("gui_runnig")
+    colorscheme solarized
+    set background=dark
+else
+    colorscheme wombat256mod
+endif
 
 let g:SuperTabDefaultCompletionType="context"
 
