@@ -3,6 +3,30 @@ call pathogen#helptags()
 
 set nocompatible
 
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'bufexplorer.zip'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'aklt/plantuml-syntax'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'chmck/vim-coffee-script'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'kana/vim-smartinput'
+
+
 syntax on
 filetype plugin on
 filetype plugin indent on
