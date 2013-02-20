@@ -1,6 +1,3 @@
-call pathogen#infect()
-call pathogen#helptags()
-
 set nocompatible
 
 if has('vim_starting')
@@ -15,17 +12,20 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'bufexplorer.zip'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'aklt/plantuml-syntax'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'chmck/vim-coffee-script'
+NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'kana/vim-smartinput'
-
+NeoBundle 'fholgado/minibufexpl.vim'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'Raimondi/delimitMate'
 
 syntax on
 filetype plugin on
@@ -44,6 +44,13 @@ set backspace=indent,eol,start
 
 set columns=151
 
+" persistent undo
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+"color scheme
 set t_Co=256
 if &t_Co==256 || has("gui_runnig")
     colorscheme solarized
@@ -52,7 +59,6 @@ else
     colorscheme wombat256mod
 endif
 
-let g:SuperTabDefaultCompletionType="context"
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -73,9 +79,6 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
-" Syntastic
-let g:syntastic_check_on_open=1
-
 " NerdTREE
 au VimEnter * NERDTree
 au VimEnter * wincmd p
@@ -83,10 +86,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " CocoaPods
 au BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
-
-" MXML and ActionScript
-au BufNewFile,BufRead *.mxml set ft=mxml
-au BufNewFile,BufRead *.as set ft=actionscript
 
 " Jake
 au BufNewFile,BufRead Jakefile set ft=javascript
@@ -96,4 +95,24 @@ au BufNewFile,BufRead jsTestDriver.conf set ft=yaml
 
 " Key maps
 map <C-L> <esc>:NERDTreeToggle<cr>
+map <C-T> <esc>:TagbarToggle<cr>
 
+" Make clang_complete work with neocomplcache
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_overwrite_completefunc = 1
+let g:neocomplcache_force_omni_patterns.c =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_force_omni_patterns.cpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplcache_force_omni_patterns.objc =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_force_omni_patterns.objcpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:clang_complete_auto = 0
+let g:clang_auto_select = 0
+let g:clang_use_library = 1
+let g:clang_close_preview = 1
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'clang_complete'
