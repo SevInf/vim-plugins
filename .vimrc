@@ -62,6 +62,13 @@ else
     colorscheme wombat256mod
 endif
 
+" Enable omni completion
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
