@@ -130,3 +130,19 @@ let g:clang_snippets_engine = 'clang_complete'
 " indentLine
 let g:indentLine_color_gui = '#585858'
 let g:indentLine_color_term = 239
+" CoffeeTags
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
