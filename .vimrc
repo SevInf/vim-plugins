@@ -126,3 +126,7 @@ let g:clang_use_library = 1
 let g:clang_close_preview = 1
 let g:clang_snippets = 1
 let g:clang_snippets_engine = 'clang_complete'
+
+" indentLine
+let g:indentLine_color_gui = '#585858'
+let g:indentLine_color_term = 239
