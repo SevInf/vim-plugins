@@ -26,6 +26,9 @@ NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'camelcasemotion'
+NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundle 'Yggdroot/indentLine'
 
 syntax on
 filetype plugin on
