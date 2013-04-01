@@ -29,6 +29,8 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'camelcasemotion'
 NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'eraserhd/vim-ios'
+NeoBundle 'b4winckler/vim-objc'
 
 syntax on
 filetype plugin on
@@ -76,6 +78,7 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_close_preview = 1
 
 " neosnippet
 " Plugin key-mappings.
@@ -120,12 +123,18 @@ let g:neocomplcache_force_omni_patterns.objc =
       \ '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_force_omni_patterns.objcpp =
       \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
 let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
 let g:clang_use_library = 1
 let g:clang_close_preview = 1
 let g:clang_snippets = 1
 let g:clang_snippets_engine = 'clang_complete'
+
+if has('macunix')
+    let g:clang_exec = '/usr/local/bin/clang'
+    let g:clang_library_path = '/usr/local/lib/libclang.dylib'
+endif
 
 " indentLine
 let g:indentLine_color_gui = '#585858'
