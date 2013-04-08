@@ -31,6 +31,7 @@ NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'eraserhd/vim-ios'
 NeoBundle 'b4winckler/vim-objc'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 syntax on
 filetype plugin on
@@ -135,7 +136,6 @@ if has('macunix')
     let g:clang_exec = '/usr/local/bin/clang'
     let g:clang_library_path = '/usr/local/lib/libclang.dylib'
 endif
-
 " indentLine
 let g:indentLine_color_gui = '#585858'
 let g:indentLine_color_term = 239
@@ -155,3 +155,7 @@ if executable('coffeetags')
         \ }
         \ }
 endif
+
+
+" EditorConfig
+let  g:EditorConfig_core_mode='external_command'
