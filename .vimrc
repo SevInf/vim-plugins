@@ -5,11 +5,9 @@ if has('vim_starting')
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
+
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
@@ -22,16 +20,31 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'camelcasemotion'
-NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'eraserhd/vim-ios'
 NeoBundle 'b4winckler/vim-objc'
 NeoBundle 'editorconfig/editorconfig-vim'
+
+NeoBundle 'Valloric/YouCompleteMe', {
+    \ 'build': {
+    \    'unix'    : './install.sh --clang-completer',
+    \    'mac'     : './install.sh --clang-completer',
+    \ },
+\ }
+
+NeoBundle 'marijnh/tern_for_vim', {
+    \ 'build': {
+    \    'unix'   : 'npm install',
+    \    'windows': 'npm install',
+    \    'mac'    : 'npm install',
+    \ },
+\ }
+
+NeoBundleCheck
 
 syntax on
 filetype plugin on
@@ -61,37 +74,13 @@ set t_Co=256
 if &t_Co==256 || has("gui_runnig")
     colorscheme solarized
     set background=dark
-else
-    colorscheme wombat256mod
 endif
 
 " Enable omni completion
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_enable_auto_close_preview = 1
-
-" neosnippet
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
 
 " NerdTREE
 au VimEnter * NERDTree
@@ -111,31 +100,6 @@ au BufNewFile,BufRead jsTestDriver.conf set ft=yaml
 map <C-L> <esc>:NERDTreeToggle<cr>
 map <C-T> <esc>:TagbarToggle<cr>
 
-" Make clang_complete work with neocomplcache
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_overwrite_completefunc = 1
-let g:neocomplcache_force_omni_patterns.c =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_force_omni_patterns.cpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplcache_force_omni_patterns.objc =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_force_omni_patterns.objcpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-let g:clang_use_library = 1
-let g:clang_close_preview = 1
-let g:clang_snippets = 1
-let g:clang_snippets_engine = 'clang_complete'
-
-if has('macunix')
-    let g:clang_exec = '/usr/local/bin/clang'
-    let g:clang_library_path = '/usr/local/lib/libclang.dylib'
-endif
 " indentLine
 let g:indentLine_color_gui = '#585858'
 let g:indentLine_color_term = 239
@@ -155,7 +119,3 @@ if executable('coffeetags')
         \ }
         \ }
 endif
-
-
-" EditorConfig
-let  g:EditorConfig_core_mode='external_command'
