@@ -22,6 +22,7 @@ NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-markdown'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'camelcasemotion'
 NeoBundle 'Yggdroot/indentLine'
@@ -117,5 +118,14 @@ if executable('coffeetags')
         \ 'f' : 'object',
         \ 'o' : 'object',
         \ }
-        \ }
+    \ }
 endif
+
+" markdown code highlight
+
+let g:markdown_fenced_languages = [
+    \ 'javascript',
+    \ 'c',
+    \ 'cpp',
+    \ 'objective-c=objc'
+\ ]
