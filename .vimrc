@@ -29,6 +29,17 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'eraserhd/vim-ios'
 NeoBundle 'b4winckler/vim-objc'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'leshill/vim-json'
+NeoBundle 'SirVer/ultisnips'
+
+NeoBundle 'Shougo/vimproc', {
+    \ 'build' : {
+    \     'windows' : 'make -f make_mingw32.mak',
+    \     'cygwin' : 'make -f make_cygwin.mak',
+    \     'mac' : 'make -f make_mac.mak',
+    \     'unix' : 'make -f make_unix.mak',
+    \    },
+    \ }
 
 NeoBundle 'Valloric/YouCompleteMe', {
     \ 'build': {
@@ -61,6 +72,7 @@ set expandtab
 set smartindent
 set formatoptions-=r
 set backspace=indent,eol,start
+set paste
 
 set columns=151
 
@@ -129,3 +141,13 @@ let g:markdown_fenced_languages = [
     \ 'cpp',
     \ 'objective-c=objc'
 \ ]
+
+" YCM keys
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_select_previous_completion = ['<Up>']
+
+" Ultisnpips keys
+let g:UltiSnipsExpandTrigger = '<c-tab>'
+let g:UltiSnipsListSnippets = '<c-s-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
