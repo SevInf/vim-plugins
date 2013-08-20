@@ -1,0 +1,11 @@
+snippet techb "BEMSmoke tech test" !b
+tech.withSourceFiles({
+	${1:sources}
+})
+.build('${2:out}', {
+	${3:decl}
+})
+.producesFile('$2.${4:suffix}')
+.withContent(${5:content})
+.notify(done);
+endsnippet
