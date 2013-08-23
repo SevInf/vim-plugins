@@ -9,7 +9,6 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'aklt/plantuml-syntax'
 NeoBundle 'scrooloose/syntastic'
@@ -18,7 +17,6 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-ruby/vim-ruby'
-"NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -33,6 +31,7 @@ NeoBundle 'leshill/vim-json'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'bling/vim-bufferline'
+NeoBundle 'Shougo/unite.vim'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
@@ -84,6 +83,13 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+" show status line always
+set laststatus=2
+
+" don't show scrollbars, toolbar, menu
+set guioptions+=rlTm
+set guioptions-=rlTm
+
 "color scheme
 set t_Co=256
 if &t_Co==256 || has("gui_runnig")
@@ -97,11 +103,6 @@ autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" NerdTREE
-au VimEnter * NERDTree
-au VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 " CocoaPods
 au BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
 
@@ -112,7 +113,9 @@ au BufNewFile,BufRead Jakefile set ft=javascript
 au BufNewFile,BufRead jsTestDriver.conf set ft=yaml
 
 " Key maps
-map <C-L> <esc>:NERDTreeToggle<cr>
+"map <C-L> <esc>:NERDTreeToggle<cr>
+map <leader>f <esc>:Unite -start-insert file_rec/async<cr>
+map <leader>b <esc>:Unite -start-insert buffer<cr>
 map <C-T> <esc>:TagbarToggle<cr>
 
 " indentLine
@@ -156,3 +159,6 @@ let g:UltiSnipsJumpBackwardTrigger = '<c-tab>'
 
 " buferline
 let g:bufferline_echo = 0
+
+" airline
+let g:airline#extensions#tagbar#enabled = 0
