@@ -18,7 +18,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'fholgado/minibufexpl.vim'
+"NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -31,6 +31,8 @@ NeoBundle 'b4winckler/vim-objc'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'SirVer/ultisnips'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'bling/vim-bufferline'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
@@ -151,3 +153,6 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsListSnippets = '<s-tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-tab>'
+
+" buferline
+let g:bufferline_echo = 0
