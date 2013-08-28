@@ -30,8 +30,8 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'bling/vim-bufferline'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell.vim'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
@@ -114,9 +114,13 @@ au BufNewFile,BufRead jsTestDriver.conf set ft=yaml
 
 " Key maps
 "map <C-L> <esc>:NERDTreeToggle<cr>
-map <leader>f <esc>:Unite -start-insert file_rec/async<cr>
-map <leader>b <esc>:Unite -start-insert buffer<cr>
-map <C-T> <esc>:TagbarToggle<cr>
+noremap <leader>f <esc>:Unite -start-insert file_rec/async<cr>
+noremap <leader>b <esc>:Unite -start-insert buffer<cr>
+noremap <C-T> <esc>:TagbarToggle<cr>
+noremap <C-Left> <esc>:tabprevious<cr>
+noremap <C-h> <esc>:tabprevious<cr>
+noremap <C-Right> <esc>:tabnext<cr>
+noremap <C-l> <esc>:tabnext<cr>
 
 " indentLine
 let g:indentLine_color_gui = '#585858'
@@ -162,3 +166,4 @@ let g:bufferline_echo = 0
 
 " airline
 let g:airline#extensions#tagbar#enabled = 0
+let g:airline_exclude_preview = 0
