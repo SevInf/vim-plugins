@@ -32,6 +32,7 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell.vim'
+NeoBundle 'alunny/pegjs-vim'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
@@ -64,6 +65,7 @@ filetype plugin on
 filetype plugin indent on
 
 set number
+set relativenumber
 set spell
 
 set tabstop=4
@@ -167,3 +169,6 @@ let g:bufferline_echo = 0
 " airline
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_exclude_preview = 0
+
+" vimshell
+let g:vimshell_environment_term='xterm-256color'
