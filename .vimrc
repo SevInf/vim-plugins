@@ -118,6 +118,8 @@ au BufNewFile,BufRead jsTestDriver.conf set ft=yaml
 "map <C-L> <esc>:NERDTreeToggle<cr>
 noremap <leader>f <esc>:Unite -start-insert file_rec/async<cr>
 noremap <leader>b <esc>:Unite -start-insert buffer<cr>
+noremap <leader>u <esc>:Unite -start-insert source<cr>
+noremap <leader>g <esc>:Unite grep<cr>
 noremap <C-T> <esc>:TagbarToggle<cr>
 noremap <C-Left> <esc>:tabprevious<cr>
 noremap <C-h> <esc>:tabprevious<cr>
