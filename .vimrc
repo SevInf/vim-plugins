@@ -33,11 +33,10 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'alunny/pegjs-vim'
+NeoBundle 'SevInf/vim-bemhtml'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
-    \     'windows' : 'make -f make_mingw32.mak',
-    \     'cygwin' : 'make -f make_cygwin.mak',
     \     'mac' : 'make -f make_mac.mak',
     \     'unix' : 'make -f make_unix.mak',
     \    },
@@ -45,8 +44,8 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'Valloric/YouCompleteMe', {
     \ 'build': {
-    \    'unix'    : './install.sh --clang-completer',
-    \    'mac'     : './install.sh --clang-completer',
+    \    'unix'    : 'sh install.sh --clang-completer --system-libclang',
+    \    'mac'     : 'sh install.sh --clang-completer --system-libclang',
     \ },
 \ }
 
@@ -126,9 +125,13 @@ noremap <C-h> <esc>:tabprevious<cr>
 noremap <C-Right> <esc>:tabnext<cr>
 noremap <C-l> <esc>:tabnext<cr>
 
+" neobundle
+let g:neobundle#install_process_timeout = 180
+
 " indentLine
 let g:indentLine_color_gui = '#585858'
 let g:indentLine_color_term = 239
+let g:indentLine_char = '┊'
 " CoffeeTags
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
@@ -150,6 +153,7 @@ endif
 
 let g:markdown_fenced_languages = [
     \ 'javascript',
+    \ 'js=javascript',
     \ 'c',
     \ 'cpp',
     \ 'objective-c=objc'
