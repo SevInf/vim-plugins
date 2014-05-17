@@ -178,3 +178,7 @@ let g:airline_exclude_preview = 0
 
 " vimshell
 let g:vimshell_environment_term='xterm-256color'
+
+" syntastic
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
