@@ -117,11 +117,13 @@ au BufNewFile,BufRead Jakefile set ft=javascript
 au BufNewFile,BufRead jsTestDriver.conf set ft=yaml
 
 " Key maps
-"map <C-L> <esc>:NERDTreeToggle<cr>
+let mapleader=","
 noremap <leader>f <esc>:Unite -start-insert file_rec/async<cr>
 noremap <leader>b <esc>:Unite -start-insert buffer<cr>
 noremap <leader>u <esc>:Unite -start-insert source<cr>
 noremap <leader>g <esc>:Unite grep<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 noremap <C-T> <esc>:TagbarToggle<cr>
 noremap <C-Left> <esc>:tabprevious<cr>
 noremap <C-h> <esc>:tabprevious<cr>
