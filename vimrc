@@ -130,6 +130,10 @@ noremap <C-h> <esc>:tabprevious<cr>
 noremap <C-Right> <esc>:tabnext<cr>
 noremap <C-l> <esc>:tabnext<cr>
 
+" Abbriviations
+iabbrev filed field
+iabbrev Filed Field
+
 " neobundle
 let g:neobundle#install_process_timeout = 180
 
