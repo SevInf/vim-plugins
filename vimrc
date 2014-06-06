@@ -107,6 +107,19 @@ autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+" Tabstop 2 for some files
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+autocmd FileType json setlocal tabstop=2 shiftwidth=2
+autocmd FileType coffee setlocal tabstop=2 shiftwidth=2
+autocmd FileType jade setlocal tabstop=2 shiftwidth=2
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
+
+" jshint
+autocmd BufNewFile,BufRead .jshintrc set ft=json
+
+" bower
+autocmd BufNewFile,BufRead .bowerrc set ft=json
+
 " CocoaPods
 au BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
 
