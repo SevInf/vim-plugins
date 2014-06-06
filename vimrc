@@ -68,6 +68,7 @@ filetype plugin indent on
 set number
 set relativenumber
 set spell
+set spelllang=en_us,ru_ru
 
 set tabstop=4
 set shiftwidth=4
