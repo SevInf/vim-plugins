@@ -132,6 +132,17 @@ noremap <C-l> <esc>:tabnext<cr>
 nnoremap H ^
 nnoremap L $
 
+" Hard mode
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 " Abbriviations
 iabbrev filed field
 iabbrev Filed Field
