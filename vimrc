@@ -79,7 +79,7 @@ set formatoptions-=r
 set backspace=indent,eol,start
 set paste
 
-set columns=151
+set columns=120
 
 " persistent undo
 set undodir=~/.vim/undodir
