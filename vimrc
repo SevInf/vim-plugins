@@ -71,6 +71,7 @@ set spell
 
 set tabstop=4
 set shiftwidth=4
+set shiftround
 set smarttab
 set expandtab
 set smartindent
