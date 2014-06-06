@@ -77,7 +77,6 @@ set expandtab
 set smartindent
 set formatoptions-=r
 set backspace=indent,eol,start
-set paste
 
 set columns=120
 
