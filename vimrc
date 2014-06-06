@@ -129,6 +129,8 @@ noremap <C-Left> <esc>:tabprevious<cr>
 noremap <C-h> <esc>:tabprevious<cr>
 noremap <C-Right> <esc>:tabnext<cr>
 noremap <C-l> <esc>:tabnext<cr>
+nnoremap H ^
+nnoremap L $
 
 " Abbriviations
 iabbrev filed field
