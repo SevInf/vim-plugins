@@ -3,3 +3,4 @@
 *.un~
 Session.vim
 /bundle
+!/bundle/neobundle.vim
