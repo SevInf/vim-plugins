@@ -27,7 +27,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'eraserhd/vim-ios'
 NeoBundle 'b4winckler/vim-objc'
 NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'leshill/vim-json'
+NeoBundle 'elzr/vim-json'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/unite.vim'
@@ -217,3 +217,6 @@ let g:vimshell_environment_term='xterm-256color'
 " syntastic
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+
+" no-conceal cursor for indent line
+let g:indentLine_noConcealCursor=""
