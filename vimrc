@@ -28,7 +28,6 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'SevInf/vim-bemhtml'
 
 NeoBundle 'Shougo/vimproc', {
