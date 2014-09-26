@@ -29,6 +29,7 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'SevInf/vim-bemhtml'
+NeoBundle 'mustache/vim-mustache-handlebars'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
