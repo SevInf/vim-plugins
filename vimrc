@@ -30,6 +30,8 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'SevInf/vim-bemhtml'
 NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundle 'jszakmeister/vim-togglecursor'
+NeoBundle 'airblade/vim-rooter'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
@@ -216,3 +218,5 @@ let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 
 " no-conceal cursor for indent line
 let g:indentLine_noConcealCursor=""
+
+" us local cd with rooter
