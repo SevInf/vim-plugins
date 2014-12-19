@@ -32,6 +32,7 @@ NeoBundle 'SevInf/vim-bemhtml'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'jszakmeister/vim-togglecursor'
 NeoBundle 'airblade/vim-rooter'
+NeoBundle 'wting/rust.vim'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
