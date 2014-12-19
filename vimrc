@@ -220,4 +220,7 @@ let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 " no-conceal cursor for indent line
 let g:indentLine_noConcealCursor=""
 
+" no conceal for json
+let g:vim_json_syntax_conceal = 0
+
 " us local cd with rooter
