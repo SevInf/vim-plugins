@@ -14,8 +14,8 @@ NeoBundle 'aklt/plantuml-syntax'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -95,10 +95,8 @@ set guioptions-=rlTm
 
 "color scheme
 set t_Co=256
-if &t_Co==256 || has("gui_runnig")
-    colorscheme solarized
-    set background=dark
-endif
+colorscheme base16-solarized
+set background=dark
 
 " Enable omni completion
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
