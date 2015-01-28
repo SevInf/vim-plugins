@@ -127,7 +127,7 @@ augroup vimrc
 augroup END
 
 " Key maps
-let mapleader=","
+let g:mapleader=","
 noremap <leader>f <esc>:Unite -start-insert file_rec/async<cr>
 noremap <leader>b <esc>:Unite -start-insert buffer<cr>
 noremap <leader>u <esc>:Unite -start-insert source<cr>
