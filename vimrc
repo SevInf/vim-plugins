@@ -1,3 +1,5 @@
+set encoding=utf-8
+scriptencoding utf-8
 set nocompatible
 
 if has('vim_starting')
@@ -98,33 +100,31 @@ set t_Co=256
 colorscheme base16-solarized
 set background=dark
 
-" Enable omni completion
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" define a group for autocommands
+augroup vimrc
+    autocmd!
+    " Enable omni completion
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" Tabstop 2 for some files
-autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
-autocmd FileType json setlocal tabstop=2 shiftwidth=2
-autocmd FileType coffee setlocal tabstop=2 shiftwidth=2
-autocmd FileType jade setlocal tabstop=2 shiftwidth=2
-autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
+    " Tabstop 2 for some files
+    autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+    autocmd FileType json setlocal tabstop=2 shiftwidth=2
+    autocmd FileType coffee setlocal tabstop=2 shiftwidth=2
+    autocmd FileType jade setlocal tabstop=2 shiftwidth=2
+    autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
 
-" jshint
-autocmd BufNewFile,BufRead .jshintrc set ft=json
+    " jshint
+    autocmd BufNewFile,BufRead .jshintrc set ft=json
 
-" bower
-autocmd BufNewFile,BufRead .bowerrc set ft=json
+    " bower
+    autocmd BufNewFile,BufRead .bowerrc set ft=json
 
-" CocoaPods
-au BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
-
-" Jake
-au BufNewFile,BufRead Jakefile set ft=javascript
-
-" JsTestDirver config
-au BufNewFile,BufRead jsTestDriver.conf set ft=yaml
+    " CocoaPods
+    autocmd BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
+augroup END
 
 " Key maps
 let mapleader=","
@@ -165,25 +165,8 @@ let g:neobundle#install_process_timeout = 180
 let g:indentLine_color_gui = '#585858'
 let g:indentLine_color_term = 239
 let g:indentLine_char = '┊'
-" CoffeeTags
-if executable('coffeetags')
-  let g:tagbar_type_coffee = {
-        \ 'ctagsbin' : 'coffeetags',
-        \ 'ctagsargs' : '',
-        \ 'kinds' : [
-        \ 'f:functions',
-        \ 'o:object',
-        \ ],
-        \ 'sro' : ".",
-        \ 'kind2scope' : {
-        \ 'f' : 'object',
-        \ 'o' : 'object',
-        \ }
-    \ }
-endif
 
 " markdown code highlight
-
 let g:markdown_fenced_languages = [
     \ 'javascript',
     \ 'js=javascript',
@@ -202,15 +185,9 @@ let g:UltiSnipsListSnippets = '<s-tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-tab>'
 
-" buferline
-let g:bufferline_echo = 0
-
 " airline
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_exclude_preview = 0
-
-" vimshell
-let g:vimshell_environment_term='xterm-256color'
 
 " syntastic
 let g:syntastic_aggregate_errors = 1
@@ -221,5 +198,3 @@ let g:indentLine_noConcealCursor=""
 
 " no conceal for json
 let g:vim_json_syntax_conceal = 0
-
-" us local cd with rooter
