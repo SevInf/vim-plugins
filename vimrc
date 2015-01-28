@@ -81,8 +81,8 @@ set backspace=indent,eol,start
 set columns=120
 
 " persistent undo
-set undodir=~/.vim/undodir
 set undofile
+set undodir=~/.vim/undodir
 set undolevels=1000
 set undoreload=10000
 
