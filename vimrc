@@ -35,6 +35,7 @@ NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'jszakmeister/vim-togglecursor'
 NeoBundle 'airblade/vim-rooter'
 NeoBundle 'wting/rust.vim'
+NeoBundle 'janko-m/vim-test'
 
 NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
@@ -198,3 +199,6 @@ let g:indentLine_noConcealCursor=""
 
 " no conceal for json
 let g:vim_json_syntax_conceal = 0
+
+" Vim test mapping
+nmap tt :TestNearest<CR>
