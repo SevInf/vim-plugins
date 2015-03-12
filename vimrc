@@ -139,7 +139,7 @@ noremap <leader>g <esc>:Unite grep<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-noremap <C-T> <esc>:TagbarToggle<cr>
+nnoremap <leader>t :TagbarToggle<cr>
 noremap <C-Left> <esc>:tabprevious<cr>
 noremap <C-h> <esc>:tabprevious<cr>
 noremap <C-Right> <esc>:tabnext<cr>
