@@ -136,6 +136,7 @@ noremap <leader>f <esc>:Unite -start-insert file_rec/async<cr>
 nnoremap <leader>b <esc>:Unite -start-insert buffer<cr>
 noremap <leader>u <esc>:Unite -start-insert source<cr>
 noremap <leader>g <esc>:Unite grep<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 noremap <C-T> <esc>:TagbarToggle<cr>
@@ -208,6 +209,9 @@ nmap tt :TestNearest<CR>
 let g:test#javascript#mocha#options = {
     \ 'nearest': '--no-colors',
 \}
+
+" NERDTree
+let g:NERDTreeQuitOnOpen = 1
 
 " Neovim-specific settings
 if has('nvim')
