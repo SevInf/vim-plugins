@@ -32,7 +32,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'SevInf/vim-bemhtml'
 NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'jszakmeister/vim-togglecursor'
+"NeoBundle 'jszakmeister/vim-togglecursor'
 NeoBundle 'airblade/vim-rooter'
 NeoBundle 'wting/rust.vim'
 NeoBundle 'janko-m/vim-test'
@@ -101,6 +101,9 @@ set t_Co=256
 colorscheme base16-solarized
 set background=dark
 
+"enable mouse
+set mouse=a
+
 " define a group for autocommands
 augroup vimrc
     autocmd!
@@ -130,7 +133,7 @@ augroup END
 " Key maps
 let g:mapleader=","
 noremap <leader>f <esc>:Unite -start-insert file_rec/async<cr>
-noremap <leader>b <esc>:Unite -start-insert buffer<cr>
+nnoremap <leader>b <esc>:Unite -start-insert buffer<cr>
 noremap <leader>u <esc>:Unite -start-insert source<cr>
 noremap <leader>g <esc>:Unite grep<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -202,3 +205,14 @@ let g:vim_json_syntax_conceal = 0
 
 " Vim test mapping
 nmap tt :TestNearest<CR>
+let g:test#javascript#mocha#options = {
+    \ 'nearest': '--no-colors',
+\}
+
+" Neovim-specific settings
+if has('nvim')
+    augroup nvimrc
+        autocmd!
+        autocmd WinEnter term://* startinsert
+    augroup END
+endif
