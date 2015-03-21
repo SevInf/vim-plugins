@@ -3,5 +3,5 @@
 *.un~
 Session.vim
 /bundle
-!/bundle/neobundle.vim
+/autoload/plug.vim
 /undodir

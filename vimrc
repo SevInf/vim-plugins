@@ -2,66 +2,39 @@ set encoding=utf-8
 scriptencoding utf-8
 set nocompatible
 
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+call plug#begin("~/.vim/bundle")
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
+Plug 'aklt/plantuml-syntax'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'kchmck/vim-coffee-script'
+Plug 'pangloss/vim-javascript'
+Plug 'chriskempson/base16-vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-markdown'
+Plug 'Raimondi/delimitMate'
+Plug 'camelcasemotion'
+Plug 'Yggdroot/indentLine'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'elzr/vim-json'
+Plug 'SirVer/ultisnips'
+Plug 'bling/vim-airline'
+Plug 'Shougo/unite.vim'
+Plug 'SevInf/vim-bemhtml'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'airblade/vim-rooter'
+Plug 'wting/rust.vim'
+Plug 'janko-m/vim-test'
+Plug 'Shougo/vimproc', { 'do': 'make' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'aklt/plantuml-syntax'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'camelcasemotion'
-NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'SevInf/vim-bemhtml'
-NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'airblade/vim-rooter'
-NeoBundle 'wting/rust.vim'
-NeoBundle 'janko-m/vim-test'
-
-NeoBundle 'Shougo/vimproc', {
-    \ 'build' : {
-    \     'mac' : 'make -f make_mac.mak',
-    \     'unix' : 'make -f make_unix.mak',
-    \    },
-    \ }
-
-NeoBundle 'Valloric/YouCompleteMe', {
-    \ 'build': {
-    \    'unix'    : 'sh install.sh --clang-completer --system-libclang',
-    \    'mac'     : 'sh install.sh --clang-completer --system-libclang',
-    \ },
-\ }
-
-NeoBundle 'marijnh/tern_for_vim', {
-    \ 'build': {
-    \    'unix'   : 'npm install',
-    \    'windows': 'npm install',
-    \    'mac'    : 'npm install',
-    \ },
-\ }
-
-call neobundle#end()
-
-NeoBundleCheck
+call plug#end()
 
 syntax on
 filetype plugin on
@@ -162,9 +135,6 @@ inoremap <right> <nop>
 " Abbriviations
 iabbrev filed field
 iabbrev Filed Field
-
-" neobundle
-let g:neobundle#install_process_timeout = 180
 
 " indentLine
 let g:indentLine_color_gui = '#585858'
