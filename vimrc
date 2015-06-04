@@ -34,6 +34,11 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
+" Neovim-specific plugins
+if has('nvim')
+    Plug 'kassio/neoterm'
+endif
+
 call plug#end()
 
 syntax on
@@ -175,13 +180,14 @@ let g:indentLine_noConcealCursor=""
 let g:vim_json_syntax_conceal = 0
 
 " Vim test mapping
-nmap tt :TestNearest<CR>
-let g:test#javascript#mocha#options = {
-    \ 'nearest': '--no-colors',
-\}
+nmap tn :TestNearest<CR>
+nmap tt :TestLast<CR>
 
 " NERDTree
 let g:NERDTreeQuitOnOpen = 1
+
+" Vim rooter
+let g:rooter_use_lcd = 1
 
 " Neovim-specific settings
 if has('nvim')
@@ -189,4 +195,7 @@ if has('nvim')
         autocmd!
         autocmd WinEnter term://* startinsert
     augroup END
+
+    let test#strategy = "neoterm"
+    let g:neoterm_position = 'vertical'
 endif
