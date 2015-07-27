@@ -36,6 +36,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'airblade/vim-rooter'
 Plug 'wting/rust.vim'
 Plug 'janko-m/vim-test'
+Plug 'mxw/vim-jsx'
 Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
