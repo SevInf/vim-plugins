@@ -114,8 +114,8 @@ augroup vimrc
     " CocoaPods
     autocmd BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
 
-    " Hard wrap markdown to 80 chars
-    autocmd FileType markdown setlocal textwidth=80
+    " Auto hard wrap markdown to 80 chars
+    autocmd FileType markdown setlocal textwidth=80 formatoptions+=a
 augroup END
 
 " Key maps
