@@ -40,6 +40,7 @@ Plug 'mxw/vim-jsx'
 Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'reedes/vim-pencil'
 
 " Neovim-specific plugins
 if has('nvim')
@@ -89,6 +90,7 @@ set background=dark
 "enable mouse
 set mouse=a
 
+
 " define a group for autocommands
 augroup vimrc
     autocmd!
@@ -115,7 +117,7 @@ augroup vimrc
     autocmd BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
 
     " Auto hard wrap markdown to 80 chars
-    autocmd FileType markdown setlocal textwidth=80 formatoptions+=a
+    autocmd FileType markdown call pencil#init({'wrap': 'hard'})
 augroup END
 
 " Key maps
@@ -192,6 +194,9 @@ let g:vim_json_syntax_conceal = 0
 " Vim test mapping
 nmap tn :TestNearest<CR>
 nmap tt :TestLast<CR>
+
+" Text Width for pencil
+let g:pencil#textwidth = 80
 
 " NERDTree
 let g:NERDTreeQuitOnOpen = 1
